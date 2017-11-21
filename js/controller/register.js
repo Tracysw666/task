@@ -10,7 +10,7 @@ $("#register-button").click(function(){
 $("#login-button").click(function(){
     console.log("登录 ");
     var user = {username:$('#login-name').text(),password:$('#login-pwd').text()};
-    $.ajax({url:"/login",method:"POST",data:user,success:function(result){
+    $.ajax({url:"/ajax/login",method:"POST",data:user,success:function(result){
         console.log(result);
     }});
 });

@@ -3,7 +3,7 @@
  */
 //点击登录
 function login (username,pwd){
-    var user = {username:123,password:123};
+    var user = {username:username,password:pwd};
     $.ajax({url:"/ajax/login",method:"POST",data:user,success:function(result){
         console.log(result);
         if(result.code ==0){
@@ -22,10 +22,10 @@ function login (username,pwd){
 $("#register-button").click(function(){
 
     console.log("注册 ");
-    var register = {username:$("#register-username").text(),email:$("#register-email").text(),password:$("#register-pwd").text(),getGoodsName:$("#register-goods-name").text(),
-    phone:$("#register-phone").text(),address:$("#register-address").text()};
+    var register = {username:$("#register-username").val(),email:$("#register-email").val(),password:$("#register-pwd").val(),getGoodsName:$("#register-goods-name").val(),
+    phone:$("#register-phone").val(),address:$("#register-address").val()};
     console.log(register);
-    $.ajax({url:"/ajax/register",contentType: "application/x-www-form-urlencoded;charset=utf-8" ,method:"POST",data:JSON.stringify(register),success:function(result){
+    $.ajax({url:"/ajax/register",method:"POST",data:register,success:function(result){
         console.log(result);
         if(result.code == 0){
             login(register.username,register.password);
@@ -42,5 +42,5 @@ $("#register-button").click(function(){
 
 
 $("#login-button").click(function(){
-    login($('#login-name').text(),$('#login-pwd').text());
+    login($('#login-name').val(),$('#login-pwd').val());
 });

@@ -3,7 +3,7 @@
  */
 //点击登录
 function login (username,pwd){
-    var user = {username:username,password:pwd};
+    var user = {username:213,password:123};
     $.ajax({url:"/ajax/login",method:"POST",data:user,success:function(result){
         console.log(result);
         if(result.code ==0){

@@ -5,8 +5,8 @@
 $("#register-button").click(function(){
 
     console.log("注册 ");
-    var register = {username:$("#register-username"),email:$("#register-email"),password:$("#register-pwd"),getGoodsName:$("#register-goods-name"),
-    phone:$("#register-phone"),address:$("#register-address")};
+    var register = {username:$("#register-username").text(),email:$("#register-email").text(),password:$("#register-pwd").text(),getGoodsName:$("#register-goods-name").text(),
+    phone:$("#register-phone").text(),address:$("#register-address").text()};
     console.log(register);
     $.ajax({url:"/ajax/register",method:"POST",data:register,success:function(result){
         console.log(result);

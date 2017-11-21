@@ -10,10 +10,13 @@ $("#register-button").click(function(){
     console.log(register);
     $.ajax({url:"/ajax/register",method:"POST",data:register,success:function(result){
         console.log(result);
-        if(result.code ==0){
+        if(result.code == 0){
 
         }else{
-
+            bootbox.alert({
+                message: "请完善信息后再次提交!",
+                size: 'small'
+            });
         }
     }});
 
@@ -27,7 +30,10 @@ $("#login-button").click(function(){
         if(result.code ==0){
 
         }else{
-
+            bootbox.alert({
+                message: "密码或账户填写错误!",
+                size: 'small'
+            });
         }
     }});
 });

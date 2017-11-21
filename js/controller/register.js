@@ -25,7 +25,7 @@ $("#register-button").click(function(){
     var register = {username:$("#register-username").text(),email:$("#register-email").text(),password:$("#register-pwd").text(),getGoodsName:$("#register-goods-name").text(),
     phone:$("#register-phone").text(),address:$("#register-address").text()};
     console.log(register);
-    $.ajax({url:"/ajax/register","Content-Type": "application/x-www-form-urlencoded;charset=utf-8" ,method:"POST",data:register,success:function(result){
+    $.ajax({url:"/ajax/register",contentType: "application/x-www-form-urlencoded;charset=utf-8" ,method:"POST",data:register,success:function(result){
         console.log(result);
         if(result.code == 0){
             login(register.username,register.password);

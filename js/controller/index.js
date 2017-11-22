@@ -3,20 +3,10 @@
  */
 //cookie
 
-function getCookie(name)
-{
-    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
-    if(arr=document.cookie.match(reg))
-        return unescape(arr[2]);
-    else
-        return null;
-}
 
 
 /// /查cookie是否有效
 function isLogin(cookiename){
-    console.log(getCookie("login"))
-
     return !!$.cookie(cookiename);
 }
 

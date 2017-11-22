@@ -8,7 +8,7 @@ function login (username,pwd){
         console.log(result);
         if(result.code ==0){
             window.location.href = "index.html";
-            localstorage.user = result.data;
+            localStorage.user = result.data;
         }else{
             bootbox.alert({
                 message: "密码或账户填写错误!",

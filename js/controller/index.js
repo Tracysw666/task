@@ -3,7 +3,9 @@
  */
 //查cookie是否有效
 function isLogin(cookiename){
-    console.log(cookiename);
+    setTimeout(function(){
+        console.log(cookiename);
+    },1000)
     console.log($.cookie(cookiename));
     return !!$.cookie(cookiename);
 }

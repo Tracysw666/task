@@ -26,3 +26,15 @@ if(isLogin("login")){
     console.log(34)
 
 }
+
+/*搜索按钮*/
+$("#search-button").click(function(){
+    var proname = $("#search-text").val();
+    if(proname.length==0){
+       return bootbox.alert({
+            message: "请在搜索框中输入内容",
+            size: 'small'
+        });
+    }
+    window.location.href = "product.html?proname="+ proname;
+})

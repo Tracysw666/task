@@ -17,6 +17,7 @@ var user = JSON.parse(localStorage.user);
 if(isLogin("login")){
     $("#login-label").hide();
     $("#username-label").show();
+    console.log(user.username);
     $("#username").text(user.username);
     console.log(12)
 }else  {

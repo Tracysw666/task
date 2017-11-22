@@ -1,15 +1,25 @@
 /**
  * Created by gaogao on 2017/11/21.
  */
-//查cookie是否有效
+//cookie
+
+function getCookie(name)
+{
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+    if(arr=document.cookie.match(reg))
+        return unescape(arr[2]);
+    else
+        return null;
+}
+
+
+/// /查cookie是否有效
 function isLogin(cookiename){
-    setTimeout(function(){
-        console.log(cookiename);
-        console.log($.cookie(cookiename));
-    },1000)
+    console.log(getCookie("login"))
 
     return !!$.cookie(cookiename);
 }
+
 
 
 var user = JSON.parse(localStorage.user);

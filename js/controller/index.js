@@ -3,6 +3,7 @@
  */
 //查cookie是否有效
 function isLogin(cookiename){
+    console.log($.cookie(cookiename));
     return !!$.cookie(cookiename);
 }
 

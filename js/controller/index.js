@@ -5,8 +5,9 @@
 function isLogin(cookiename){
     setTimeout(function(){
         console.log(cookiename);
+        console.log($.cookie(cookiename));
     },1000)
-    console.log($.cookie(cookiename));
+
     return !!$.cookie(cookiename);
 }
 

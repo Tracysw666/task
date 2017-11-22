@@ -25,6 +25,13 @@ $("#register-button").click(function(){
     var register = {username:$("#register-username").val(),email:$("#register-email").val(),password:$("#register-pwd").val(),getGoodsName:$("#register-goods-name").val(),
     phone:$("#register-phone").val(),address:$("#register-address").val()};
     console.log(register);
+    if(register.password != $("#register-pwdagain").val()){
+     return bootbox.alert({
+            message: "两次密码输入不一致!",
+            size: 'small'
+        });
+    }
+
     $.ajax({url:"/ajax/register",method:"POST",data:register,success:function(result){
         console.log(result);
         if(result.code == 0){
